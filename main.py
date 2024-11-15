@@ -1,21 +1,18 @@
 import random
 import customtkinter
 
-small_sym="abcdefghijklmnopqrstuvwxyz"
-big_sym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-nums = "0123456789"
-spec_sym = "!@#$%^&*()_+-=[]{}|;:',.<>?/"
+alphabet_syms="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:',.<>?/"
 
 #Function to generate password
 def generate_pass(specialsymbols=True):
+    list1=[]
+    str_to_return = ""
     for i in range(10):
         if specialsymbols == True:
-            return []
-
-
-
-
-
+            list1.append(alphabet_syms[random.randint(0,len(alphabet_syms)-1)])
+    for el in list1:
+        str_to_return+=str(el)
+    return str_to_return
 
 
 
@@ -42,6 +39,6 @@ pass_label.grid(row=0, column=2, padx=20, pady=20)
 
 if __name__ == "__main__":
     app.mainloop()
-
+    print(generate_pass(True))
 
 
