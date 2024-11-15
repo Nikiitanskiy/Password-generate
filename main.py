@@ -1,6 +1,22 @@
 import random
 import customtkinter
 
+small_sym="abcdefghijklmnopqrstuvwxyz"
+big_sym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+nums = "0123456789"
+spec_sym = "!@#$%^&*()_+-=[]{}|;:',.<>?/"
+
+#Function to generate password
+def generate_pass(specialsymbols=True):
+    for i in range(10):
+        if specialsymbols == True:
+            return []
+
+
+
+
+
+
 
 
 app = customtkinter.CTk()
@@ -8,19 +24,19 @@ app = customtkinter.CTk()
 app.geometry("400x100")
 app.title("Password generator")
 
+app.minsize(400,100)
+app.maxsize(400,100)
 
 
-#Function to generate password
-def generate_pass():
-    return None
 
 
+#Button that generetad password
 generate_button = customtkinter.CTkButton(app, text="Generate", command=generate_pass)
 generate_button.grid(row=0, column=0, padx=20, pady=20, sticky="ew", columnspan=2)
-
+#Checkbox for checking special symbols in pass
 check_special = customtkinter.CTkCheckBox(app, text="Special characters")
 check_special.grid(row=1, column=0, padx=20, pady=(0, 20), sticky="w")
-
+#There will be a password here
 pass_label = customtkinter.CTkLabel(app, text="CLICK GENERATE")
 pass_label.grid(row=0, column=2, padx=20, pady=20)
 
